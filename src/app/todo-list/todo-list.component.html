@@ -1,0 +1,12 @@
+<form (ngSubmit)="create()">
+  <div class="form-group d-flex justify-content-between">
+    <input name="title" type="text" class="form-control" [(ngModel)]="title" required>
+    <button class="btn btn-primary">add</button>
+  </div>
+</form>
+<div class="filter btn-group">
+  <button class="btn btn-primary" (click)="all()">All</button>
+  <button class="btn btn-primary" (click)="filterCompleted()">Completed</button>
+  <button class="btn btn-primary" (click)="filterUncompleted()">Uncompleted</button>
+</div>
+<app-todo-item *ngFor="let item of todo let i = index let itemFilter of todoFilter" (delete)="deleteItem(i)" (checked)="toggle(i)" [newItem]="itemFilter" [item]="item"></app-todo-item>

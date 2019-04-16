@@ -1,0 +1,7 @@
+<div class="justify-content-between d-flex">
+  <p [class.completed]="item.completed">
+    <input type="checkbox" (change)="onChecked()">
+    {{item.name}}
+  </p>
+  <i style="cursor: pointer" class="material-icons" (click)="onDelete()">delete</i>
+</div>
